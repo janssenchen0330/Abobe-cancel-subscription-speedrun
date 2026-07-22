@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adobe取消訂閱速通挑戰</title>
+<title>Abobe取消訂閱速通挑戰</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Adobe Clean', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #2c2c2c; }
+  body { font-family: 'Abobe Clean', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #2c2c2c; }
 
   /* ── Header ── */
   .adobe-header {
@@ -349,6 +349,104 @@
     font-size: 12px;
     color: #666;
   }
+
+  /* ── Challenge Banner ── */
+  .challenge-banner {
+    background: linear-gradient(135deg, #e34850, #ff6b6b);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    animation: challengePulse 1.5s ease-in-out infinite;
+  }
+  @keyframes challengePulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(227,72,80,0.3); }
+    50% { box-shadow: 0 0 25px rgba(227,72,80,0.6); }
+  }
+  .challenge-banner .challenger-name {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .challenge-banner .challenger-time {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffe066;
+    margin: 4px 0;
+  }
+  .challenge-banner .challenger-msg {
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ── Share Section ── */
+  .share-section {
+    margin-top: 20px;
+  }
+  .name-input {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 16px;
+    width: 80%;
+    max-width: 260px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .name-input::placeholder { color: rgba(255,255,255,0.4); }
+  .name-input:focus { border-color: #e34850; }
+  .btn-share {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 28px;
+    background: linear-gradient(135deg, #1473e6, #0d66d0);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+  .btn-share:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(20,115,230,0.5); }
+  .share-link-box {
+    margin-top: 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .share-link-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 12px;
+    outline: none;
+    min-width: 0;
+  }
+  .btn-copy {
+    background: #e34850;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-copy:hover { background: #c9252d; }
 
   /* ── Manage Plan Modal ── */
   .manage-overlay {
@@ -1745,7 +1843,7 @@
 </head>
 <body>
 
-<!-- Adobe-style Header -->
+<!-- Abobe-style Header -->
 <header class="adobe-header">
   <a class="adobe-logo" href="#">
     <svg viewBox="0 0 30 26" fill="#e34850">
@@ -1753,7 +1851,7 @@
       <polygon points="18.5,0 30,26 21.5,26 16.5,13"/>
       <polygon points="15,9.5 19.5,19.5 10.5,19.5"/>
     </svg>
-    Adobe Account
+    Abobe Account
   </a>
   <nav class="header-nav">
     <a href="#">總覽</a>
@@ -1780,33 +1878,33 @@
   <div class="main-content">
     <h1 class="page-title">計劃</h1>
 
-    <!-- Plan: Creative Cloud Pro -->
+    <!-- Plan: Creative Clown Pro -->
     <div class="plan-card">
       <div class="plan-visual">
         <div class="plan-thumbnail cc-pro">
-          <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="Creative Cloud">
+          <img src="assets/Abobe_Creative_Cloud_icon.png" alt="Creative Clown">
         </div>
-        <div class="plan-name">Creative Cloud Pro</div>
-        <div class="plan-desc">取得20多個應用程式，包括Photoshop、Illustrator、Premiere Pro和Acrobat Pro，以及適用於視訊、音訊及其他等的Adobe Firefly 創意AI進階功能。</div>
+        <div class="plan-name">Creative Clown Pro</div>
+        <div class="plan-desc">取得20多個應用程式，包括Photoshoped、Illustration、Premier Bro和Acrobrat Pro，以及適用於視訊、音訊及其他等的Abobe Fireflies 創意AI進階功能。</div>
         <button class="btn-manage" id="managePlan1">管理計劃</button>
       </div>
       <div class="plan-details">
         <h3>您的計劃所包含的內容</h3>
         <div class="detail-item">
           <div class="detail-icon icon-ps">Ps</div>
-          Photoshop
+          Photoshoped
         </div>
         <div class="detail-item">
           <div class="detail-icon icon-ai">Ai</div>
-          Illustrator
+          Illustration
         </div>
         <div class="detail-item">
           <div class="detail-icon" style="background:#00005b;color:#9999ff;font-size:10px;">Pr</div>
-          Premiere Pro
+          Premier Bro
         </div>
         <div class="detail-item">
           <div class="detail-icon" style="background:#1b0028;color:#ff4dff;font-size:10px;">Ae</div>
-          After Effects
+          After Affects
         </div>
         <div class="detail-item">
           <div class="detail-icon icon-cloud">☁</div>
@@ -1846,8 +1944,8 @@
       <div class="manage-plan-info">
         <h3>您的計劃</h3>
         <div class="manage-plan-card">
-          <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="Creative Cloud">
-          <div class="plan-card-name">Creative Cloud Pro</div>
+          <img src="assets/Abobe_Creative_Cloud_icon.png" alt="Creative Clown">
+          <div class="plan-card-name">Creative Clown Pro</div>
         </div>
         <ul class="manage-plan-details">
           <li>雲端儲存空間: 100GB</li>
@@ -1915,7 +2013,7 @@
         <polygon points="18.5,0 30,26 21.5,26 16.5,13"/>
         <polygon points="15,9.5 19.5,19.5 10.5,19.5"/>
       </svg>
-      <span>Adobe</span>
+      <span>Abobe</span>
     </div>
     <div class="adobe-tagline">Sign in or create an account</div>
   </div>
@@ -1937,7 +2035,7 @@
       </div>
       <div class="password-field">
         <label>Password</label>
-        <div class="password-hint-text">（你的密碼：AdobeSoExpensiveFKU）</div>
+        <div class="password-hint-text">（你的密碼：AbobeSoExpensiveFKU）</div>
         <div class="input-wrapper">
           <input type="password" id="passwordInput">
           <button type="button" class="password-toggle" id="togglePassword">
@@ -1979,8 +2077,8 @@
     <div class="cancel-header">
       <h2>取消計劃</h2>
       <div class="cancel-plan-badge">
-        <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC">
-        Creative Cloud Pro
+        <img src="assets/Abobe_Creative_Cloud_icon.png" alt="CC">
+        Creative Clown Pro
       </div>
     </div>
 
@@ -2013,7 +2111,7 @@
           <h3>為什麼想要取消計劃？</h3>
           <div class="reason-item">
             <input type="checkbox" id="r1">
-            <label for="r1">我有另一個 Adobe 會籍。</label>
+            <label for="r1">我有另一個 Abobe 會籍。</label>
           </div>
           <div class="reason-item">
             <input type="checkbox" id="r2">
@@ -2057,8 +2155,8 @@
           <h3>您的計劃詳細資料</h3>
           <div class="cancel-plan-info-card">
             <div class="cpic-header">
-              <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC">
-              <span>Creative Cloud Pro</span>
+              <img src="assets/Abobe_Creative_Cloud_icon.png" alt="CC">
+              <span>Creative Clown Pro</span>
             </div>
             <div class="cpic-detail">
               綁約<br>
@@ -2092,7 +2190,7 @@
         <!-- Card 2: Lose apps -->
         <div class="detail-card">
           <div class="detail-card-banner gradient">
-            <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC" style="width:48px;height:48px;">
+            <img src="assets/Abobe_Creative_Cloud_icon.png" alt="CC" style="width:48px;height:48px;">
           </div>
           <div class="detail-card-body">
             <h4>您將無法再存取大部分喜愛的應用程式。</h4>
@@ -2103,10 +2201,10 @@
               <div class="mini-icon" style="background:#330000;color:#ff9a00;">Ai</div>
               <div class="mini-icon" style="background:#00005b;color:#9999ff;">Id</div>
             </div>
-            <p style="font-size:15px;color:#2c2c2c;font-weight:500;">Creative Cloud Pro</p>
+            <p style="font-size:15px;color:#2c2c2c;font-weight:500;">Creative Clown Pro</p>
           </div>
         </div>
-        <!-- Card 3: Acrobat -->
+        <!-- Card 3: Acrobrat -->
         <div class="detail-card">
           <div class="detail-card-banner red">
             <div class="banner-icon" style="background:transparent;">
@@ -2117,7 +2215,7 @@
             </div>
           </div>
           <div class="detail-card-body">
-            <h4>一些 Acrobat 功能將無法使用：</h4>
+            <h4>一些 Acrobrat 功能將無法使用：</h4>
             <div class="detail-list-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="#4b4b4b" stroke-width="1.5"><path d="M4 16L16 4M4 4l6 6"/></svg>
               編輯 PDF 文字和影像
@@ -2152,8 +2250,8 @@
           </div>
           <div class="detail-card-body">
             <h4>您將獲得部分服務的有限存取權:</h4>
-            <p>您的 <span style="color:#1473e6;">Adobe Portfolio</span> 將會停用。</p>
-            <p>可存取的 1,000 種 <span style="color:#1473e6;">Adobe Fonts</span> 字體將會減少。</p>
+            <p>您的 <span style="color:#1473e6;">Abobe Porfolio</span> 將會停用。</p>
+            <p>可存取的 1,000 種 <span style="color:#1473e6;">Abobe Fontz</span> 字體將會減少。</p>
           </div>
         </div>
       </div>
@@ -2166,11 +2264,11 @@
         <!-- Offer 1: Free 2 months -->
         <div class="offer-card">
           <div class="offer-banner cc-banner">
-            <img class="cc-logo" src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC">
+            <img class="cc-logo" src="assets/Abobe_Creative_Cloud_icon.png" alt="CC">
             <div class="offer-badge green">超值優惠</div>
           </div>
           <div class="offer-body">
-            <h4>Creative Cloud Pro</h4>
+            <h4>Creative Clown Pro</h4>
             <p class="offer-desc">接下來 2 個月可免費使用並省下 NT$4,620。</p>
             <p class="offer-price-label">標準價格 <s>NT$2,310/月</s></p>
             <p class="offer-highlight">您接下來 60 天的價格</p>
@@ -2182,12 +2280,12 @@
         <!-- Offer 2: Discounted -->
         <div class="offer-card">
           <div class="offer-banner cc-banner">
-            <img class="cc-logo" src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC">
+            <img class="cc-logo" src="assets/Abobe_Creative_Cloud_icon.png" alt="CC">
             <div class="offer-badge dark">特別優惠</div>
           </div>
           <div class="offer-body">
-            <h4>Creative Cloud Pro</h4>
-            <p class="offer-desc">轉換到「Creative Cloud Pro」。</p>
+            <h4>Creative Clown Pro</h4>
+            <p class="offer-desc">轉換到「Creative Clown Pro」。</p>
             <p class="offer-price-label">標準價格 <s>NT$2,310/月</s></p>
             <p class="offer-highlight">首年折扣</p>
             <p class="offer-price-big">NT$<span>1,050</span>/月</p>
@@ -2214,36 +2312,36 @@
                 <span class="dd-caret">▼</span>
               </button>
               <div class="offer-dropdown-list" id="offerDropdownList">
-                <div>Photoshop</div>
-                <div>Illustrator</div>
-                <div>Premiere Pro</div>
-                <div>After Effects</div>
-                <div>InDesign</div>
-                <div>Lightroom</div>
-                <div>Lightroom Classic</div>
-                <div>Adobe XD</div>
-                <div>Animate</div>
-                <div>Dreamweaver</div>
-                <div>Audition</div>
+                <div>Photoshoped</div>
+                <div>Illustration</div>
+                <div>Premier Bro</div>
+                <div>After Affects</div>
+                <div>InDesine</div>
+                <div>Lightroon</div>
+                <div>Lightroon Classic</div>
+                <div>Abobe DX</div>
+                <div>Animite</div>
+                <div>Dreamwaver</div>
+                <div>Audision</div>
                 <div>InCopy</div>
                 <div>Dimension</div>
-                <div>Adobe Fresco</div>
-                <div>Adobe Aero</div>
+                <div>Abobe Frasco</div>
+                <div>Abobe Airo</div>
                 <div>Substance 3D Painter</div>
                 <div>Substance 3D Stager</div>
                 <div>Substance 3D Sampler</div>
                 <div>Substance 3D Designer</div>
-                <div>Acrobat Pro</div>
-                <div>Adobe Express</div>
-                <div>Adobe Firefly</div>
-                <div>Adobe Stock</div>
-                <div>Adobe Fonts</div>
-                <div>Adobe Portfolio</div>
-                <div>Adobe Scan</div>
-                <div>Adobe Fill & Sign</div>
-                <div>Adobe Capture</div>
-                <div>Creative Cloud 完整應用程式</div>
-                <div>Creative Cloud Pro</div>
+                <div>Acrobrat Pro</div>
+                <div>Abobe Espresso</div>
+                <div>Abobe Fireflies</div>
+                <div>Abobe Stonk</div>
+                <div>Abobe Fontz</div>
+                <div>Abobe Porfolio</div>
+                <div>Abobe Scam</div>
+                <div>Abobe Fill & Sigh</div>
+                <div>Abobe Captcha</div>
+                <div>Creative Clown 完整應用程式</div>
+                <div>Creative Clown Pro</div>
               </div>
             </div>
           </div>
@@ -2281,7 +2379,7 @@
             </div>
             <div class="review-item-text">
               <h4>儲存空間</h4>
-              <p>您的雲端儲存空間將減少至 5GB。如果它仍然超過此限制，您有 90 天的時間來減少線上使用量，否則您可能會失去 Creative Cloud 伺服器上儲存的部分或所有檔案的存取權。<a href="#">詳細資訊 ›</a></p>
+              <p>您的雲端儲存空間將減少至 5GB。如果它仍然超過此限制，您有 90 天的時間來減少線上使用量，否則您可能會失去 Creative Clown 伺服器上儲存的部分或所有檔案的存取權。<a href="#">詳細資訊 ›</a></p>
             </div>
           </div>
           <div class="review-item">
@@ -2298,8 +2396,8 @@
           <h3>受影響的計劃</h3>
           <div class="review-plan-card">
             <div class="rpc-header">
-              <img src="assets/Adobe_Creative_Cloud_rainbow_icon.svg" alt="CC">
-              <span>Creative Cloud Pro</span>
+              <img src="assets/Abobe_Creative_Cloud_icon.png" alt="CC">
+              <span>Creative Clown Pro</span>
             </div>
             <div class="rpc-detail">
               綁約<br>
@@ -2351,7 +2449,7 @@
   <div class="chat-header">
     <div class="chat-header-title">
       <svg class="chat-logo" viewBox="0 0 30 26" fill="#e34850"><polygon points="11.5,0 0,26 8.5,26 11,19.5 18.4,19.5"/><polygon points="18.5,0 30,26 21.5,26 16.5,13"/><polygon points="15,9.5 19.5,19.5 10.5,19.5"/></svg>
-      Adobe 虛擬助理
+      Abobe 虛擬助理
     </div>
     <div class="chat-header-actions">
       <button style="color:#1473e6;font-size:18px;font-weight:700;">•••</button>
@@ -2372,7 +2470,7 @@
       <div class="chat-avatar">
         <svg viewBox="0 0 30 26" fill="#e34850"><polygon points="11.5,0 0,26 8.5,26 11,19.5 18.4,19.5"/><polygon points="18.5,0 30,26 21.5,26 16.5,13"/><polygon points="15,9.5 19.5,19.5 10.5,19.5"/></svg>
       </div>
-      <div class="chat-bubble">您好，我是 Adobe 虛擬助理。有什麼需要協助的地方嗎？</div>
+      <div class="chat-bubble">您好，我是 Abobe 虛擬助理。有什麼需要協助的地方嗎？</div>
     </div>
   </div>
   <div class="chat-canned" id="chatCanned">
@@ -2389,11 +2487,11 @@
 <!-- Speedrun Overlay -->
 <div class="speedrun-overlay" id="overlay">
   <div class="speedrun-modal">
-    <div class="speedrun-title">Adobe</div>
+    <div class="speedrun-title">Abobe</div>
     <div class="speedrun-subtitle">取消訂閱 Speedrun</div>
     <p class="speedrun-desc">
       挑戰你的速度！<br>
-      在 Adobe 設下的<em>重重阻礙</em>中，<br>
+      在 Abobe 設下的<em>重重阻礙</em>中，<br>
       以最快速度成功<em>取消訂閱</em>。<br>
       計時從你按下開始的瞬間啟動！
     </p>
@@ -2418,6 +2516,39 @@
     document.getElementById('subscribeDate').textContent = '已訂閱 (自 ' + y + '年' + m + '月' + d + '日起)';
     const next = new Date(y, now.getMonth() + 1, d);
     document.getElementById('nextPayDate').textContent = '下次付款日期為 ' + next.getFullYear() + '年' + (next.getMonth() + 1) + '月' + next.getDate() + '日';
+  })();
+
+  // Challenge detection — check URL for ?c= parameter
+  (function() {
+    const params = new URLSearchParams(location.search);
+    const code = params.get('c');
+    if (!code) return;
+    try {
+      const data = JSON.parse(decodeURIComponent(escape(atob(code))));
+      if (data.n && data.t) {
+        const challengeTime = formatTimeChallenge(data.t);
+        const modal = document.querySelector('.speedrun-modal');
+        const banner = document.createElement('div');
+        banner.className = 'challenge-banner';
+        banner.innerHTML =
+          '<div class="challenger-name">' + escapeHtml(data.n) + ' 總共花了</div>' +
+          '<div class="challenger-time">' + challengeTime + '</div>' +
+          '<div class="challenger-msg">成功退訂了 Abobe，你能比他更快嗎？</div>';
+        modal.insertBefore(banner, modal.firstChild);
+      }
+    } catch(e) {}
+
+    function formatTimeChallenge(ms) {
+      const minutes = Math.floor(ms / 60000);
+      const seconds = Math.floor((ms % 60000) / 1000);
+      const millis = ms % 1000;
+      return String(minutes).padStart(2,'0') + ':' + String(seconds).padStart(2,'0') + '.' + String(millis).padStart(3,'0');
+    }
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
   })();
 
   // Timer logic
@@ -2501,7 +2632,7 @@
   // Password validation
   document.getElementById('btnContinue').addEventListener('click', function() {
     const pwd = document.getElementById('passwordInput').value;
-    if (pwd === 'AdobeSoExpensiveFKU') {
+    if (pwd === 'AbobeSoExpensiveFKU') {
       document.getElementById('passwordPage').classList.remove('show');
       document.getElementById('passwordError').style.display = 'none';
       document.getElementById('cancelPage').classList.add('show');
@@ -2514,6 +2645,11 @@
     } else {
       document.getElementById('passwordError').style.display = 'block';
     }
+  });
+
+  // Block paste on password input
+  document.getElementById('passwordInput').addEventListener('paste', function(e) {
+    e.preventDefault();
   });
 
   // Allow Enter key to submit password
@@ -2789,11 +2925,43 @@
       '<div class="speedrun-title">取消成功！</div>' +
       '<div class="speedrun-subtitle">SPEEDRUN COMPLETE</div>' +
       '<p class="speedrun-desc" style="font-size:48px;color:#fff;font-weight:900;margin-bottom:16px;">' + finalTime + '</p>' +
-      '<p class="speedrun-desc">恭喜你成功逃離 Adobe 的魔掌！</p>' +
-      '<button class="btn-start" id="btnReplay" style="margin-top:16px;">再玩一次</button>';
+      '<p class="speedrun-desc">恭喜你成功逃離 Abobe 的魔掌！</p>' +
+      '<div class="share-section">' +
+        '<p class="speedrun-desc" style="margin-bottom:12px;color:#ccc;">輸入你的名字，分享給朋友看誰退訂的手速更快！</p>' +
+        '<input type="text" class="name-input" id="playerName" placeholder="輸入你的名字" maxlength="20">' +
+        '<br><button class="btn-share" id="btnShare">產生挑戰連結</button>' +
+        '<div id="shareLinkResult" style="display:none;">' +
+          '<div class="share-link-box">' +
+            '<input type="text" id="shareUrl" readonly>' +
+            '<button class="btn-copy" id="btnCopy">複製</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<button class="btn-start" id="btnReplay" style="margin-top:20px;">再玩一次</button>';
+
+    // Share link generation
+    document.getElementById('btnShare').addEventListener('click', function() {
+      const name = document.getElementById('playerName').value.trim();
+      if (!name) { document.getElementById('playerName').style.borderColor = '#e34850'; return; }
+      const data = btoa(unescape(encodeURIComponent(JSON.stringify({ n: name, t: elapsed }))));
+      const url = location.origin + location.pathname + '?c=' + data;
+      document.getElementById('shareUrl').value = url;
+      document.getElementById('shareLinkResult').style.display = 'block';
+    });
+
+    // Copy button
+    document.getElementById('btnCopy').addEventListener('click', function() {
+      const urlInput = document.getElementById('shareUrl');
+      urlInput.select();
+      navigator.clipboard.writeText(urlInput.value).then(function() {
+        document.getElementById('btnCopy').textContent = '已複製！';
+        setTimeout(function() { document.getElementById('btnCopy').textContent = '複製'; }, 2000);
+      });
+    });
+
     // Replay button
     document.getElementById('btnReplay').addEventListener('click', function() {
-      location.reload();
+      location.href = location.origin + location.pathname;
     });
   });
 
