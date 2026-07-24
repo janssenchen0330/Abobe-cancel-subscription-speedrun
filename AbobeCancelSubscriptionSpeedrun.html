@@ -379,6 +379,58 @@
     color: rgba(255,255,255,0.9);
   }
 
+  /* ── Challenge Comparison ── */
+  .challenge-result {
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .challenge-result .result-label {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+  }
+  .challenge-result .result-vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .challenge-result .result-player {
+    text-align: center;
+  }
+  .challenge-result .result-player .rp-name {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+  }
+  .challenge-result .result-player .rp-time {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .challenge-result .result-player.winner .rp-time { color: #51d88a; }
+  .challenge-result .result-player.loser .rp-time { color: #e34850; }
+  .challenge-result .vs-divider {
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.3);
+  }
+  .challenge-result .result-verdict {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .challenge-result .result-verdict.win { color: #51d88a; }
+  .challenge-result .result-verdict.lose { color: #e34850; }
+  .challenge-result .result-diff {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
   /* ── Share Section ── */
   .share-section {
     margin-top: 20px;
@@ -1257,7 +1309,7 @@
   .offer-card {
     border: 1px solid #e1e1e1;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
   }
@@ -1269,6 +1321,7 @@
     padding: 12px;
     background-size: cover;
     background-position: center;
+    border-radius: 10px 10px 0 0;
   }
   .offer-banner.cc-banner {
     background: linear-gradient(135deg, #1b0a2e 0%, #6b2fa0 30%, #d4620b 60%, #c9a200 100%);
@@ -2519,6 +2572,7 @@
   })();
 
   // Challenge detection — check URL for ?c= parameter
+  var challengerData = null;
   (function() {
     const params = new URLSearchParams(location.search);
     const code = params.get('c');
@@ -2526,6 +2580,7 @@
     try {
       const data = JSON.parse(decodeURIComponent(escape(atob(code))));
       if (data.n && data.t) {
+        challengerData = data;
         const challengeTime = formatTimeChallenge(data.t);
         const modal = document.querySelector('.speedrun-modal');
         const banner = document.createElement('div');
@@ -2921,11 +2976,43 @@
     document.getElementById('chatFab').classList.remove('visible');
     document.getElementById('chatWindow').classList.remove('show');
     document.getElementById('overlay').classList.remove('hidden');
+    var challengeCompareHtml = '';
+    if (challengerData) {
+      var cTime = challengerData.t;
+      var diff = Math.abs(elapsed - cTime);
+      var diffFormatted = formatTime(diff);
+      var playerWon = elapsed < cTime;
+      var tied = elapsed === cTime;
+      var cName = (function(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; })(challengerData.n);
+      var cTimeFormatted = formatTime(cTime);
+      var verdict = tied ? '平手！' : (playerWon ? '你贏了！🎉' : '你輸了！');
+      var verdictClass = tied ? 'win' : (playerWon ? 'win' : 'lose');
+      var diffText = tied ? '' : '<div class="result-diff">' + (playerWon ? '快了 ' : '慢了 ') + diffFormatted + '</div>';
+      challengeCompareHtml =
+        '<div class="challenge-result">' +
+          '<div class="result-label">⚔️ 挑戰結果</div>' +
+          '<div class="result-vs">' +
+            '<div class="result-player ' + (playerWon || tied ? 'winner' : 'loser') + '">' +
+              '<div class="rp-name">你</div>' +
+              '<div class="rp-time">' + finalTime + '</div>' +
+            '</div>' +
+            '<div class="vs-divider">VS</div>' +
+            '<div class="result-player ' + (!playerWon || tied ? 'winner' : 'loser') + '">' +
+              '<div class="rp-name">' + cName + '</div>' +
+              '<div class="rp-time">' + cTimeFormatted + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="result-verdict ' + verdictClass + '">' + verdict + '</div>' +
+          diffText +
+        '</div>';
+    }
+
     document.querySelector('.speedrun-modal').innerHTML =
       '<div class="speedrun-title">取消成功！</div>' +
       '<div class="speedrun-subtitle">SPEEDRUN COMPLETE</div>' +
       '<p class="speedrun-desc" style="font-size:48px;color:#fff;font-weight:900;margin-bottom:16px;">' + finalTime + '</p>' +
       '<p class="speedrun-desc">恭喜你成功逃離 Abobe 的魔掌！</p>' +
+      challengeCompareHtml +
       '<div class="share-section">' +
         '<p class="speedrun-desc" style="margin-bottom:12px;color:#ccc;">輸入你的名字，分享給朋友看誰退訂的手速更快！</p>' +
         '<input type="text" class="name-input" id="playerName" placeholder="輸入你的名字" maxlength="20">' +
